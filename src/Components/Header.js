@@ -5,28 +5,13 @@ import axios from "axios"
 
 const Header = () => {
     const [userdata, setUserdata] = useState({});
-    // console.log(userdata)
-    // console.log("response", userdata)
 
     const getUser = async () => {
         try {
-            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });
-//at that point we are also sending , { withCredentials: true } it means when user is loged in and credential true we will sending 
-//this to the route which we made in abckend a function 
-/* app.get("/login/sucess",async(req,res)=>{
-console.log(req)
-    if(req.user){
-        res.status(200).json({message:"user Login",user:req.user})
-    }else{
-        res.status(400).json({message:"Not Authorized"})
-    }
-})
-
-from here we will get req.user */            
-
+            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });          
             setUserdata(response.data.user)
         } catch (error) {
-            // console.log("error", error.response.data.message)
+            console.log("error", error.response.data.message)
             // alert(error.response.data.message)
         }
     }
