@@ -1,26 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./header.css"
 import { NavLink } from "react-router-dom"
-// import axios from "axios"
+import axios from "axios"
 
 const Header = () => {
-    // const [userdata, setUserdata] = useState({});
+    const [userdata, setUserdata] = useState({});
   
 
-    // const getUser = async () => {
-    //     try {
-    //         const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });          
-    //         setUserdata(response.data.user)
-    //     } catch (error) {
-    //         console.log("error", error.response.data.message)
-    //         // alert(error.response.data.message)
-    //     }
-    // }
+    const getUser = async () => {
+        try {
+            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });          
+            setUserdata(response.data.user)
+        } catch (error) {
+            console.log("error", error.response.data.message)
+            // alert(error.response.data.message)
+        }
+    }
 
     // logoout
-    // const logout = ()=>{
-    //     window.open("https://o-auth-server-kappa.vercel.app/logout","_self")
-    // }
+    const logout = ()=>{
+        window.open("https://o-auth-server-kappa.vercel.app/logout","_self")
+    }
 
     useEffect(() => {
         getUser()
@@ -44,7 +44,7 @@ const Header = () => {
                                     <>
                                     <li style={{color:"black",fontWeight:"bold"}}>{userdata?.displayName}</li>
                                         <li>
-                                            <NavLink to="/dashboar">
+                                            <NavLink to="/dashboard">
                                                 Dashboard
                                             </NavLink>
                                         </li>
@@ -54,7 +54,7 @@ const Header = () => {
                                         </li>
                                     </>
                                 ) : <li>
-                                    <NavLink to="/dashboard">
+                                    <NavLink to="/login">
                                         Login
                                     </NavLink>
                                   
