@@ -2,7 +2,7 @@ import React from 'react'
 import "./login.css"
 const Login = () => {
   const loginwithgoogle = ()=>{
-    window.open("https://o-auth-server-kappa.vercel.app/auth/google/adeel","_self")
+    window.open("http://o-auth-server-kappa.vercel.app/auth/google/adeel","_self")
   }
   return (
     <div className="login-page">
