@@ -8,7 +8,7 @@ const Dashboard = () => {
   const getUser = async () => {
     try {
         // const response = await axios.get("http://localhost:900/login/sucess", { withCredentials: true });
-        const response = await axios.get("http://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });
+        const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });
 
         console.log("response",response)
     } catch (error) {
