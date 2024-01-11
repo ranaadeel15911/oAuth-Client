@@ -1,29 +1,30 @@
-import React,  { useEffect, useState }  from 'react'
+import React from 'react'
 import "./header.css"
 import { NavLink } from "react-router-dom"
-import axios from "axios"
+// import axios from "axios"
 
 const Header = () => {
-    const [userdata, setUserdata] = useState({});
+    // const [userdata, setUserdata] = useState({});
+  
 
-    const getUser = async () => {
-        try {
-            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });          
-            setUserdata(response.data.user)
-        } catch (error) {
-            console.log("error", error.response.data.message)
-            // alert(error.response.data.message)
-        }
-    }
-useEffect(() => {
+    // const getUser = async () => {
+    //     try {
+    //         const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });          
+    //         setUserdata(response.data.user)
+    //     } catch (error) {
+    //         console.log("error", error.response.data.message)
+    //         // alert(error.response.data.message)
+    //     }
+    // }
+
+    // logoout
+    // const logout = ()=>{
+    //     window.open("https://o-auth-server-kappa.vercel.app/logout","_self")
+    // }
+
+    useEffect(() => {
         getUser()
     }, [])
-    logoout
-    const logout = ()=>{
-        window.open("https://o-auth-server-kappa.vercel.app/logout","_self")
-    }
-
-    
     return (
         <>
             <header>
@@ -38,17 +39,12 @@ useEffect(() => {
                                     Home
                                 </NavLink>
                             </li>
-                                       <li>
-        <NavLink to="/dashboard">
-                                                Dashboard
-                                            </NavLink>
-                                        </li>
                             {
                                 Object?.keys(userdata)?.length > 0 ? (
                                     <>
                                     <li style={{color:"black",fontWeight:"bold"}}>{userdata?.displayName}</li>
                                         <li>
-                                            <NavLink to="/dashboad">
+                                            <NavLink to="/dashboar">
                                                 Dashboard
                                             </NavLink>
                                         </li>
@@ -58,7 +54,7 @@ useEffect(() => {
                                         </li>
                                     </>
                                 ) : <li>
-                                    <NavLink to="/login">
+                                    <NavLink to="/dashboard">
                                         Login
                                     </NavLink>
                                   
