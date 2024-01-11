@@ -10,7 +10,7 @@ const Header = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get("http://localhost:900/login/sucess", { withCredentials: true });
+            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });
 //at that point we are also sending , { withCredentials: true } it means when user is loged in and credential true we will sending 
 //this to the route which we made in abckend a function 
 /* app.get("/login/sucess",async(req,res)=>{
@@ -33,7 +33,7 @@ from here we will get req.user */
 
     // logoout
     const logout = ()=>{
-        window.open("http://localhost:900/logout","_self")
+        window.open("https://o-auth-server-kappa.vercel.app/logout","_self")
     }
 
     useEffect(() => {

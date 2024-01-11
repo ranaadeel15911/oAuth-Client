@@ -2,7 +2,7 @@ import React from 'react'
 import "./login.css"
 const Login = () => {
   const loginwithgoogle = ()=>{
-    window.open("http://localhost:900/auth/googl/callback","_self")
+    window.open("https://o-auth-server-kappa.vercel.app/auth/googl/callback","_self")
   }
   return (
     <div className="login-page">
