@@ -9,10 +9,10 @@ const Header = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess", { withCredentials: true });          
-            setUserdata(response.data.user)
+            const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess");          
+            setUserdata(response.data)
         } catch (error) {
-            console.log("error", error.response.data.message)
+            console.log("error", error.response.data)
             // alert(error.response.data.message)
         }
     }
