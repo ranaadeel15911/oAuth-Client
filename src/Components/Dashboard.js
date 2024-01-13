@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   const getUser = async () => {
     try {
-        const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess");
+        const response = await axios.get("https://o-auth-server-kappa.vercel.app/login/sucess" , { withCredentials: true });
 
         console.log("response",response)
     } catch (error) {
